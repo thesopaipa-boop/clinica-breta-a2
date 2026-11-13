@@ -102,6 +102,12 @@ body{
 	justify-content: left;
 	height: 100%;
 }
+.topbar-container a{
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	height: 100%;
+}
 .topbar-logo{
 	background-color: var(--color-2);
 	color: var(--color-3);
@@ -123,7 +129,7 @@ body{
 }
 .topbar-item svg{
 	color: var(--color-font);
-	transition: transform 0.5s, color 1s;
+	transition: all ease-in-out 0.5s;
 }
 .topbar-item:hover{
 	color: var(--color-2);
@@ -151,7 +157,7 @@ body{
 }
 .topbar-call svg{
 	color: var(--color-font);
-	transition: transform 0.5s, color 1s;
+	transition: all ease-in-out 0.5s;
 }
 .topbar-call:hover .topbar-line{
 	height: 100%;
@@ -163,6 +169,8 @@ body{
 .topbar-call:hover p{
 	color: var(--color-2);
 }
+
+
 
 /*---------LANDING-----------------------------------------------------------*/
 .land-container{
@@ -308,15 +316,19 @@ body{
 	align-items: center;
 	justify-content: center;
 	gap: 8rem;
-	animation: content-scroll 10s infinite linear;
+	animation: content-scroll 11s infinite linear;
 }
 .content-carouselcard{
 	height: 10rem;
 	flex: 0 0 2rem;
 }
 @keyframes content-scroll{
-	from {translate: 0%;}
-	to {translate: -100%;}
+	0%{
+		translate:0%;
+	}
+	100%{
+		translate: -105%;
+	}
 }
 
 
@@ -600,11 +612,31 @@ body{
 	gap: 1.3rem;
 }
 .end-end-menu div{
+	color: var(--color-3);
+	font-weight: bold;
+	font-size: 1.3rem;
+}
+.end-end-menu a{
 	font-weight: bold;
 	font-size: 1.3rem;
 }
 .end-end-menu p{
 	color: var(--color-3);
+	font-size: 1rem;
+}
+.end-end-menu-choice{
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+	font-size: 1rem;
+
+}
+.end-end-menu-choice svg{
+	transform: scaleY(0);
+	transition: transform 0.5s;
+}
+.end-end-menu-choice:hover .topbar-line{
+	transform: scaleY(1);
 }
 .end-end-contact{
 	width: 13rem;
@@ -635,4 +667,52 @@ body{
 }
 .end-end-map img{
 	height: 12.5rem;
+}
+
+
+
+
+
+/*---------GALLERY--------------------------------------------------------------------*/
+
+.gal-div{
+	height: 9rem;
+}
+.gal-con{
+	margin-bottom: 5rem;
+	margin-left: 9rem;
+	margin-right: 9rem;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+
+}
+.gal-con h2{
+	margin-bottom: 1rem;
+}
+.gal-box{
+	scroll-margin-top: 7rem;
+	display: grid;
+	grid-template-columns: 27rem 27rem 27rem;
+	transition: all ease-in-out 0.5s;
+	gap:1rem;
+	margin-bottom: 1.5rem;
+}
+.gal-box img{
+	width: 100%;
+	height: 31rem;
+	object-fit: cover;
+	border-radius: 0.75rem 0.75rem 0.75rem 0.75rem;
+}
+.gal-img{
+	pointer-events: auto;
+}
+.gal-box:has(.gal-img:nth-of-type(1):hover) {
+	grid-template-columns: 43rem 19rem 19rem;
+}
+.gal-box:has(.gal-img:nth-of-type(2):hover) {
+	grid-template-columns: 19rem 43rem 19rem;
+}
+.gal-box:has(.gal-img:nth-of-type(3):hover) {
+	grid-template-columns: 19rem 19rem 43rem;
 }
